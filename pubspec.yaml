@@ -1,0 +1,172 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  animation_wrappers: ^3.0.0
+  audioplayers: ^6.5.1
+  bloc: ^8.1.4
+  cached_network_image: ^3.3.1
+  carousel_slider: ^4.2.1
+  chucker_flutter: ^1.7.2
+  circle_nav_bar: ^2.2.0
+  country_code_picker: ^3.0.0
+  custom_pop_up_menu: ^1.2.4
+  data_table_2: ^2.6.0
+  device_preview: any
+  dio: ^5.5.0
+  easy_debounce: ^2.0.3
+  excel: ^2.1.0
+  fade_shimmer: ^2.2.0
+  faker: ^2.1.0
+  file_picker: ^10.1.7
+  fl_chart: ^1.0.0
+  flutter:
+    sdk: flutter
+  flutter_animate: ^4.5.0
+  flutter_animator: ^3.2.2
+  flutter_bloc: ^8.1.6
+  flutter_cached_pdfview: ^0.4.2
+  flutter_carousel_slider: ^1.1.0
+  flutter_form_builder: ^9.3.0
+  flutter_html: ^3.0.0-beta.2
+  flutter_image_compress: ^2.4.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_map: ^7.0.2
+  flutter_native_splash: ^2.4.1
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.10
+  font_awesome_flutter: ^10.7.0
+  form_builder_validators: ^11.0.0
+  freezed_annotation: ^2.4.4
+  geolocator: ^12.0.0
+  get_it: ^7.7.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  http: ^1.2.0
+  http_mock_adapter: ^0.6.1
+  iconly: ^1.0.1
+  image_picker: ^1.1.2
+  infinite_scroll_pagination: ^4.0.0
+  intl: ^0.19.0
+  json_annotation: ^4.9.0
+  latlong2: ^0.9.1
+  location: ^7.0.0
+  logger: ^2.4.0
+  lottie: ^3.1.2
+  multi_listenable_builder: ^1.0.0
+  open_file: ^3.3.2
+  overlay_support: ^2.1.0
+  package_info_plus: ^8.0.0
+  path_provider: ^2.1.2
+  pausable_timer: ^3.1.0
+  pdf: ^3.10.4
+  percent_indicator: ^4.2.3
+  permission_handler: ^11.0.1
+  pin_code_fields: ^8.0.1
+  pinput: ^5.0.0
+  pretty_dio_logger: ^1.4.0
+  provider: ^6.1.5
+  qr_code_scanner_plus: ^2.0.10+1
+  share_plus: ^10.1.4
+  shared_preferences: ^2.2.3
+  smooth_page_indicator: ^1.2.0
+  ticker_text: ^2.1.0
+  toggle_switch: ^2.3.0
+  url_launcher: ^6.2.4
+  uuid: ^4.4.2
+
+dev_dependencies:
+  analyzer: null
+  build_runner: ^2.4.11
+  flutter_gen_runner: ^5.6.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.4.7
+  import_path_converter: ^1.0.1
+  import_sorter: ^4.6.0
+  integration_test:
+    sdk: flutter
+  intl_utils: ^2.8.10
+  json_serializable: ^6.8.0
+  flutter_flavorizr: ^2.2.3
+
+# dependency_overrides:
+#   fading_edge_scrollview: ^4.1.1
+flutter_intl:
+  enabled: true
+  arb_dir: lib/src/core/config/l10n
+  output_dir: lib/src/core/config/l10n/generated
+  untranslated-messages-file: untranslated.json
+
+flutter_gen:
+  output: lib/src/core/config/assets/ # Optional (default: lib/gen/)
+  line_length: 120 # Optional (default: 80)
+
+  # Optional
+  integrations:
+    flutter_svg: true
+    # flare_flutter: true
+    # rive: true
+
+# Flavors config for iOS/Android generation
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "default"
+    ios:
+      targets:
+        - Runner
+  flavors:
+    dev:
+      app:
+        name: "Flutter App Dev"
+      ios:
+        bundleId: com.example.flutterApplication.dev
+        buildSettings:
+          PRODUCT_BUNDLE_IDENTIFIER: com.example.flutterApplication.dev
+          APP_DISPLAY_NAME: "Flutter App Dev"
+      android:
+        applicationId: com.example.flutter_application_1.dev
+    prod:
+      app:
+        name: "Flutter App"
+      ios:
+        bundleId: com.example.flutterApplication
+        buildSettings:
+          PRODUCT_BUNDLE_IDENTIFIER: com.example.flutterApplication
+          APP_DISPLAY_NAME: "Flutter App"
+      android:
+        applicationId: com.example.flutter_application_1
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+    - assets/sounds/
+    # - shorebird.yaml
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Medium.ttf
+        - asset: assets/fonts/Cairo/Cairo-Bold.ttf
+        - asset: assets/fonts/Cairo/Cairo-SemiBold.ttf

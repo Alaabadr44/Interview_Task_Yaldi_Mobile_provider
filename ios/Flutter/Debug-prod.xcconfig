@@ -1,0 +1,8 @@
+#include "Generated.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+
+FLAVOR=prod
+BASE_URL=https://api.production.com
+IS_PRODUCTION=true
+ENABLE_LOGGING=false
+

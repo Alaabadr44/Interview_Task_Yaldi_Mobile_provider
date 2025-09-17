@@ -1,0 +1,7 @@
+#include "Generated.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"
+
+FLAVOR=dev
+BASE_URL=https://dummyjson.com
+IS_PRODUCTION=false
+ENABLE_LOGGING=true
