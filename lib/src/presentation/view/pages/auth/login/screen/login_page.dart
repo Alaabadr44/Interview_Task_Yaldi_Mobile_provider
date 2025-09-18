@@ -120,9 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Login successful",
                       popLoadingDialog: false,
                     );
-                    UserService.storeUserData(data!);
-                    _controller.playSound();
-                    context.nextReplacementNamed(AppLocalRoute.dashboard.route);
+                    onSuccessLogin(data, context);
                   },
                   error: (error, event, isUnAuth, isCancel) {
                     context.showError(
@@ -374,6 +372,13 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void onSuccessLogin(UserModel? data, BuildContext context) {
+      UserService.storeUserData(data!);
+    _controller.playSound();
+    _controller.saveValueIfRememberMe();
+    context.nextReplacementNamed(AppLocalRoute.dashboard.route);
   }
 
   Widget _buildLoginButton(AuthProviderState<UserModel> state) {
