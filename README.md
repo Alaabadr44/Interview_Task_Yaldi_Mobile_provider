@@ -1,3 +1,8 @@
+### Provider App Downloads
+
+- Dev: [Google Drive - Dev APK](https://drive.google.com/file/d/1-iliuzCofLAbCluMIiqyfJKCxl-iEzHj/view?usp=sharing)
+- Prod: [Google Drive - Prod APK](https://drive.google.com/file/d/1mTBv7SX4HNzP9zLDn6sYTChVbbR8WaX8/view?usp=sharing)
+
 # Flutter Application
 
 A comprehensive Flutter application with multi-environment support, authentication, and modern architecture patterns.
@@ -22,21 +27,26 @@ A comprehensive Flutter application with multi-environment support, authenticati
 
 1. Clone the repository
 2. Install dependencies:
-   ```bash
-   flutter pub get
-   ```
+
+```bash
+flutter pub get
+```
+
 3. Generate localization files:
-   ```bash
-   flutter gen-l10n
-   ```
+
+```bash
+flutter gen-l10n
+```
+
 4. Generate code (if needed):
-   ```bash
-   flutter packages pub run build_runner build
-   ```
+
+```bash
+flutter packages pub run build_runner build
+```
 
 ## 🏗️ Project Structure
 
-```
+```ini
 lib/
 ├── src/
 │   ├── core/                    # Core utilities and configuration
@@ -58,11 +68,13 @@ lib/
 #### Using Flutter CLI
 
 **Development Environment:**
+
 ```bash
 flutter run -t lib/main_dev.dart --flavor dev
 ```
 
 **Production Environment:**
+
 ```bash
 flutter run -t lib/main_prod.dart --flavor prod
 ```
@@ -72,7 +84,7 @@ flutter run -t lib/main_prod.dart --flavor prod
 The project includes pre-configured launch configurations in `.vscode/launch.json`:
 
 1. **Flutter (DEV Debug)** - Development environment with debug mode
-2. **Flutter (PROD Debug)** - Production environment with debug mode  
+2. **Flutter (PROD Debug)** - Production environment with debug mode
 3. **Flutter (DEV Release)** - Development environment with release mode
 4. **Flutter (PROD Release)** - Production environment with release mode
 
@@ -81,11 +93,13 @@ The project includes pre-configured launch configurations in `.vscode/launch.jso
 #### iOS
 
 **Prerequisites:**
+
 - Xcode 14.0 or higher
 - iOS 14.0+ deployment target
 - Valid iOS development certificate
 
 **Running on iOS:**
+
 ```bash
 # Development
 flutter run -t lib/main_dev.dart --flavor dev -d ios
@@ -94,15 +108,17 @@ flutter run -t lib/main_dev.dart --flavor dev -d ios
 flutter run -t lib/main_prod.dart --flavor prod -d ios
 ```
 
-**Note:** iOS flavors require custom schemes to be configured in Xcode. The project uses `flutter_flavorizr` for flavor configuration, but manual Xcode setup may be required.
+__Note:__ iOS flavors require custom schemes to be configured in Xcode. The project uses `flutter_flavorizr` for flavor configuration, but manual Xcode setup may be required.
 
 #### Android
 
 **Prerequisites:**
+
 - Android SDK
 - Android device or emulator
 
 **Running on Android:**
+
 ```bash
 # Development
 flutter run -t lib/main_dev.dart --flavor dev -d android
@@ -119,13 +135,15 @@ The application implements a robust refresh token mechanism for secure authentic
 
 #### Key Components
 
-1. **DataInterceptor** (`lib/src/core/utils/interceptors/data_interceptor.dart`)
+1. __DataInterceptor__ (`lib/src/core/utils/interceptors/data_interceptor.dart`)
+
    - Automatically handles 401 (Unauthorized) responses
    - Attempts token refresh before failing requests
    - Prevents infinite refresh loops
    - Updates global access token on successful refresh
 
-2. **Token Storage** (`lib/src/core/services/user_service.dart`)
+2. __Token Storage__ (`lib/src/core/services/user_service.dart`)
+
    - Secure storage of access and refresh tokens
    - Automatic token retrieval on app initialization
    - Token cleanup on logout
@@ -133,21 +151,24 @@ The application implements a robust refresh token mechanism for secure authentic
 #### How It Works
 
 1. **Automatic Token Refresh:**
-   ```dart
-   // When a 401 error occurs, the interceptor:
-   // 1. Checks if refresh token exists
-   // 2. Calls refresh endpoint with refresh token
-   // 3. Updates access token in storage
-   // 4. Retries original request with new token
-   ```
+
+```dart
+// When a 401 error occurs, the interceptor:
+// 1. Checks if refresh token exists
+// 2. Calls refresh endpoint with refresh token
+// 3. Updates access token in storage
+// 4. Retries original request with new token
+```
 
 2. **Refresh Endpoint:**
+
    - Endpoint: `/auth/refresh`
    - Method: POST
    - Payload: `{'refreshToken': refreshToken}`
    - Response: New access token
 
 3. **Error Handling:**
+
    - If refresh fails, user is logged out
    - Prevents refresh loops by checking endpoint paths
    - Graceful fallback to login screen
@@ -174,8 +195,8 @@ if (_isUnauthorized(err.response?.statusCode) && !_isRefreshing) {
 
 The app supports multiple languages with ARB (Application Resource Bundle) files:
 
-- **English**: `lib/src/core/config/l10n/intl_en.arb`
-- **Arabic**: `lib/src/core/config/l10n/intl_ar.arb`
+- __English__: `lib/src/core/config/l10n/intl_en.arb`
+- __Arabic__: `lib/src/core/config/l10n/intl_ar.arb`
 
 ### Adding New Translations
 
@@ -194,6 +215,7 @@ The app supports multiple languages with ARB (Application Resource Bundle) files
 ## 📦 Dependencies
 
 ### Core Dependencies
+
 - `flutter_bloc` - State management
 - `provider` - Dependency injection
 - `dio` - HTTP client
@@ -201,12 +223,14 @@ The app supports multiple languages with ARB (Application Resource Bundle) files
 - `shared_preferences` - Local storage
 
 ### UI Dependencies
+
 - `flutter_screenutil` - Responsive design
 - `flutter_svg` - SVG support
 - `cached_network_image` - Image caching
 - `flutter_form_builder` - Form handling
 
 ### Development Dependencies
+
 - `flutter_flavorizr` - Flavor configuration
 - `build_runner` - Code generation
 - `freezed` - Immutable classes
@@ -215,6 +239,7 @@ The app supports multiple languages with ARB (Application Resource Bundle) files
 ## 🔧 Development Tools
 
 ### Code Generation
+
 ```bash
 # Generate localization
 flutter gen-l10n
@@ -227,11 +252,13 @@ flutter packages pub run build_runner watch
 ```
 
 ### Linting
+
 ```bash
 flutter analyze
 ```
 
 ### Testing
+
 ```bash
 # Unit tests
 flutter test
@@ -243,22 +270,29 @@ flutter test integration_test/
 ## 🚀 Deployment
 
 ### iOS
+
 1. Configure signing in Xcode
 2. Build for release:
-   ```bash
-   flutter build ios --flavor prod -t lib/main_prod.dart
-   ```
+
+```bash
+flutter build ios --flavor prod -t lib/main_prod.dart
+```
+
 3. Archive and upload to App Store
 
 ### Android
+
 1. Generate signed APK:
-   ```bash
-   flutter build apk --flavor prod -t lib/main_prod.dart
-   ```
+
+```bash
+flutter build apk --flavor prod -t lib/main_prod.dart
+```
+
 2. Or build app bundle:
-   ```bash
-   flutter build appbundle --flavor prod -t lib/main_prod.dart
-   ```
+
+```bash
+flutter build appbundle --flavor prod -t lib/main_prod.dart
+```
 
 ## 📝 Environment Configuration
 
@@ -268,6 +302,7 @@ The app supports multiple environments through flavors:
 - **Production**: Optimized builds, production API endpoints
 
 Environment-specific configurations are managed through:
+
 - `lib/main_dev.dart` - Development entry point
 - `lib/main_prod.dart` - Production entry point
 - Flavor-specific build configurations
@@ -289,21 +324,25 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ### Common Issues
 
 1. **iOS Build Issues:**
+
    - Ensure Xcode is up to date
    - Check iOS deployment target (14.0+)
    - Verify signing certificates
 
 2. **Android Build Issues:**
+
    - Check Android SDK installation
    - Verify build tools version
    - Ensure proper signing configuration
 
 3. **Flavor Issues:**
+
    - Run `flutter clean` and `flutter pub get`
    - Check flavor configuration in `pubspec.yaml`
    - Verify Xcode schemes for iOS
 
 4. **Localization Issues:**
+
    - Run `flutter gen-l10n` after adding new keys
    - Check ARB file syntax
    - Verify generated files in `lib/src/core/config/l10n/generated/`
